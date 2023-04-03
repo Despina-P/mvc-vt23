@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <h1>O m  k u r s e n  'm v c'</h1>
+
+    <a href="{{ asset('img/mvc.jpg') }}">
+        <img src="{{ asset('img/mvc.jpg') }}" width="380px" alt="">
+    </a>
+
+    <div class="sidebar">
+        <a href="https://github.com/dbwebb-se/mvc">Github (kurs)</a>
+        <a href="https://github.com/Despina-P">Github (personlig)</a>
+    </div>
+
+    <div class="main">
+        <p>
+            Kursen "Objektorienterade webbteknologier" handlar om 
+            att använda ett sätt att skriva kod som kallas "objektorienterad programmering" 
+            med programmeringsspråket PHP. Man lär sig hur man skapar olika delar av sin kod 
+            på ett bra sätt och hur man kan testa sin kod för att se om den fungerar som den ska (enhetstestning). 
+            Det handlar också om att använda ett ramverk för att bygga webbsidor och att koppla ihop kod med en databas.
+        </p>
+    </div>
+
+
+{% endblock %}
