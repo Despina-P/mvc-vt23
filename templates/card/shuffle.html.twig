@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Shuffle{% endblock %}
+
+{% block body %}
+<h1>Card game - Shuffle</h1>
+
+<p>Here is a shuffled deck of cards: </p>
+<ul>
+    {% for card in cards %}
+        <li>[{{ card.value|capitalize }}{{ card.suit }}]</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

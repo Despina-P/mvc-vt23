@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Draw{% endblock %}
+
+{% block body %}
+<h1>Card game - Draw</h1>
+
+<p>The card that was drawn from the deck is: [{{ card.value|capitalize }}{{ card.suit }}]</p>
+
+<p>The amount of card left in the deck is: {{ deckSize }} </p>
+
+{% endblock %}

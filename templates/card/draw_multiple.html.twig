@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Draw Multiple{% endblock %}
+
+{% block body %}
+    <h1>Card game - Draw Multiple</h1>
+
+    <p>The {{ cards|length }} cards that were drawn from the deck are:</p>
+    <ul>
+        {% for card in cards %}
+        <li>[{{ card.value|capitalize }}{{ card.suit }}]</li>
+        {% endfor %}
+    </ul>
+
+    <p>The amount of cards left in the deck is: {{ deckSize }}</p>
+{% endblock %}

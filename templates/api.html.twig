@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block title %}JSON API{% endblock %}
+
+{% block body %}
+    <h1>Alla JSON API Routes</h1>
+
+    <p>A. JSON svar som innehåller dagens citat, dagens datum och en tidsstämpel för när svaret genererades.</p>
+    <li><a href="{{ path('quote') }}">Quote</a></li>
+
+    <p>B. JSON struktur med hela kortleken sorterad per färg och värde.</p>
+    <li><a href="{{ path('api_deck') }}">API Deck</a></li>
+
+    <p>C. Kortleken blandas och sedan returneras en JSON struktur med kortleken. (Shuffle)</p>
+    <p>D. Dra ett kort från kortleken och visa upp det i en JSON struktur och antalet kort som är kvar i kortleken. (Draw)</p>
+    <p>E. Dra flera (5) kort från kortleken och visa upp dem i en JSON struktur och antalet kort som är kvar i kortleken. (Draw Multiple)</p>
+    <form method="post" action="">
+        <p>
+            <input type="submit" name="shuffle" value="Shuffle"
+                onClick="this.form.action='{{ path('api_deck_shuffle') }}';"
+            >
+            <input type="submit" name="draw" value="Draw"
+                onClick="this.form.action='{{ path('api_deck_draw') }}';"
+            >
+            <input type="submit" name="draw_multiple" value="Draw Multiple"
+                onClick="this.form.action='{{ path('api_deck_draw_multiple', {number:5}) }}';"
+            >
+        </p>
+    </form>
+
+{% endblock %}

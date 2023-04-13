@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Deck{% endblock %}
+
+{% block body %}
+<h1>Card game - Deck</h1>
+
+<p>The deck of cards are:</p>
+<ul>
+    {% for card in cards %}
+        <li>[{{ card.value|capitalize }}{{ card.suit }}]</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

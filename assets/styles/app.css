@@ -1,7 +1,7 @@
 body {
     background-color: whitesmoke;
     margin: 0 auto;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 h1 {
@@ -43,7 +43,7 @@ nav {
 
 footer {
     bottom: 0;
-    max-width: 400px;
+    max-width: 500px;
     background-color: #333;
     color: #fff;
     text-align: center;

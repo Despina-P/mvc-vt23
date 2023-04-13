@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Game{% endblock %}
+
+{% block body %}
+<h1>Card game</h1>
+
+<p>Pages for this assignments are:</p>
+
+<p><a href="{{ path('card_deck') }}">Show the deck sorted by color and value</a></p>
+<p><a href="{{ path('card_deck_shuffle') }}">Show the deck in a shuffled order</a></p>
+<p><a href="{{ path('card_deck_draw') }}">Draw one card from the deck</a></p>
+<p><a href="{{ path('card_deck_draw_multiple', {number:5}) }}">Draw multiple (5) cards from the deck</a></p>
+
+<h2>Klasser (Card, CardHand, DeckOfCards, DeckOfCardsJoker)</h2>
+
+<a href="{{ asset('img/mvc.drawio.png') }}">
+    <img src="{{ asset('img/mvc.drawio.png') }}" width="250px" alt="">
+</a>
+
+<p>
+    Klassen Card representerar ett kort. 
+    Den består av privata properties för valör och värde,
+    en konstruktor som initierar dessa samt metoderna getSuit() och getValues() för att hämta ut dess värden.
+</p>
+
+<p>
+    Klassen CardHand representerar en korthand.
+    Den använder sig av komposition, då CardHand är beroende av Card och inte hade existerat som fristående objekt.
+    Den består av det privata property hand som är en lista och de publika funktionerna:
+    add() ; lägger till ett kort i handen, getCards() ; returnerar korten i handen,
+    getNumberCards() ; returnerar värdet av antalet kort i handen,
+    getValues() ; returnerar en array av värden för alla kort i handen,
+    getString() ; returnerar en array med strängrepresentation av varje kort i handen.
+</p>
+
+<p>
+    Klassen DeckOfCards representerar en kortlek.
+    Den använder sig av komposition, då DeckOfCards är beroende av Card och inte hade existerat som fristående objekt.
+    Den har en publik property cards som i en array ska spara Card objekten.
+    Den består av en konstruktor som initierar arrayen med en klassisk kortlek bestående av 52 kort,
+    draw() som tar bort och returnerar kortet som ligger längst upp i kortleken,
+    shuffle() som blandar korten i kortleken,
+    getCardsSorted() som sorterar korten baserat på färg ocg värde samt
+    getDeckSize som hämtar värdet av antalet kort som är kvar i kortleken.
+</p>
+
+<p>
+    Klassen DeckOfCardsJoker använder sig av arv från DeckOfCards.
+    Dess syfte är att lägga till två Joker i kortleken.
+    Konstruktorn kallar på förälderns konstruktorn för att först skapa en standard kortlek och lägger därefter till två Card objekt med Joker.
+</p>
+
+{% endblock %}
