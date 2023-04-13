@@ -49,6 +49,47 @@
 
     <div id="kmom02">
         <p>Här är min redovisningstext för kmom02</p>
+
+        <p>
+            Arv, engelska Inheritance, används när en klass tar över variabler och metoder från en annan klass.
+            Klassen som ärver kallas oftast för barnklass och klassen den ärver ifrån kallas ofta förälderklass eller basklass.
+            Genom arv kan kod återanvändas och därmed sker ingen upprepning utav liknande funktionalitet i flera klasser.
+            I PHP implementeras arv med hjälp av 'extends'.
+            <br>
+            Komposition, engelska Composition, används när man kombinerar flera klasser till en ny klass.
+            Detta görs genom att en klass tar emot andra objekt som en parameter i dess konstruktor.
+            När det finns en svagare koppling kallas det aggregat.
+            Komposition gör det möjligt att skapa specialiserade klasser ssom har specifika egenskaper och metoder som föräldrarklassen inte har.
+            <br>
+            Interface är en abstrakt samling av metoder som beskriver vad en klass kan göra, men den visar inte hur den gör det.
+            Det ger alltså en definition av metoderna som finns i klassen utan implementationen.
+            Detta öppnar upp möjligheten för att ändra implementationen utan att påverka Interface, det ger flexibilitet.
+            <br>
+            Trait är en funktion som gör det möjligt att återanvända kod mellan klasser, ett sätt att dela funktionalitet utan arv.
+            I PHP implementeras trait med hjälp av 'trait' namnpåtrait och sedan koden.
+            Trait inkluderas med hjälp av 'use' och den fungerar såsom om koden hade varit skriven direkt i klassen.
+        </p>
+
+        <p>
+            Jag började med att implementera klasserna Card, CardHand, DeckOfCards och DeckOfCardsJoker.
+            Card representerar ett kort och CardHand en korthand. Sedan valde jag att skapa DeckOfCardsJoker som ärvde från DeckOfCards och la till två jokrar i kortleken.
+            Parallellt jobbade jag med att mina sidor och följde övningen och föreläsning för att få alla bitarna att fungera.
+            Jag fastnade sedan länge på JSON API kraven, hade svårt att förstå vad som behövde göras, men efter ett förtydligande förstod jag hur jag skulle ta mig vidare.
+            Hade även problem med POST, men förstod efter hjälp från läraren och påminnelse av övningen att jag kunde skapa knappar som länkade till routes.
+            Här återanvände jag mycket av koden jag skapat i mina sidor.
+            <br>
+            Som helhet är jag nöjd med min kod, evnetuell en förbättrinspotential i uppdelandet av klasser.
+            Eftersom det är väldigt mycket att hålla koll på, underlättar det om man har en bra struktur.
+        </p>
+
+        <p>
+            Att förstå hur klasser hänger ihop och hur flödet i ens kod är hjälper till och underlättar både vid skapandet av koden, men även när man behöver debugga.
+            Det stödjer definitivt i problemlösningsprocessen och hur man ska strukturera koden i en applikation.
+        </p>
+
+        <p>
+            Min TIL för detta kmom är att jag lärde mig hur man kan skapa en knapp för att använda sig utav POST och på det sättet visa upp JSON strukturer i webbläsaren.
+        </p>
     </div>
 
     <a href="{{ path('report') }}#kmom03">Kmom03</a>
