@@ -6,6 +6,7 @@ use App\Card\Card;
 use App\Card\DeckOfCardsJoker;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
+use App\Card\Score;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,6 +14,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
+use InvalidArgumentException;
 
 class LandingPageControllerTwig extends AbstractController
 {
@@ -27,6 +30,7 @@ class LandingPageControllerTwig extends AbstractController
     public function jsonDeck(): Response
     {
         //Visar samtliga kort i kortleken sorterade per färg och värde
+        /** @var DeckOfCards $deck */
         $deck = new DeckOfCards();
         $cards = $deck->getCardsSorted();
 
@@ -50,6 +54,7 @@ class LandingPageControllerTwig extends AbstractController
     public function jsonShuffle(SessionInterface $session): Response
     {
         //Visar samtliga kort i kortleken sorterade per färg och värde
+        /** @var DeckOfCards $deck */
         $deck = new DeckOfCards();
         $session->set('deck', $deck);
         $cards = $deck->shuffle();
@@ -74,10 +79,15 @@ class LandingPageControllerTwig extends AbstractController
     public function jsonDraw(SessionInterface $session): Response
     {
         //Visar samtliga kort i kortleken sorterade per färg och värde
+        /** @var DeckOfCards $deck */
         $deck = $session->get('deck');
 
-
         $card = $deck->draw();
+        if ($card === null) {
+            // Handle the case where there are no more cards left in the deck
+            return new JsonResponse(['error' => 'No more cards in the deck']);
+        }
+
         $cardList = "[{$card->getValue()}{$card->getSuit()}]";
 
         $deckSize = $deck->getDeckSize();
@@ -99,16 +109,17 @@ class LandingPageControllerTwig extends AbstractController
         SessionInterface $session
     ): Response {
         //Visar samtliga kort i kortleken sorterade per färg och värde
+        /** @var DeckOfCards $deck */
         $deck = $session->get('deck');
         $cards = $deck->shuffle();
 
         if ($number < 1 || $number > $deck->getDeckSize()) {
-            throw new \Exception("Invalid number of cards to draw.");
+            throw new InvalidArgumentException("Invalid number of cards to draw.");
         }
 
-        $cards = [];
+        $drawnCards = [];
         for ($i = 0; $i < $number; $i++) {
-            $cards[] = array_pop($deck->cards);
+            $drawnCards[] = array_pop($deck->cards);
         }
 
         $deckSize = $deck->getDeckSize();
@@ -126,6 +137,29 @@ class LandingPageControllerTwig extends AbstractController
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_UNESCAPED_UNICODE
+        );
+        return $response;
+    }
+
+    #[Route("/api/game", name: "api_game", methods:['GET'])]
+    public function jsonGame(
+        SessionInterface $session
+    ): Response {
+        $playerScore = $session->get('playerScore');
+        $cardsListPlayer = $session->get('cardsListPlayer');
+        $bankirScore = $session->get('bankirScore');
+        $cardsListBankir = $session->get('cardsListBankir');
+
+        $data = [
+            'cardsListPlayer' => $cardsListPlayer,
+            'playerScore' => $playerScore,
+            'cardsListBankir' => $cardsListBankir,
+            'bankirScore' => $bankirScore,
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT
         );
         return $response;
     }
