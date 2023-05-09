@@ -4,7 +4,10 @@ namespace App\Card;
 
 class DeckOfCards
 {
-    public $cards;
+    /**
+     * @var Card[]
+     */
+    public array $cards;
 
     public function __construct()
     {
@@ -13,36 +16,42 @@ class DeckOfCards
 
         //Initiera kortleken med 52 kort
         $suits = array('♥', '♦', '♣', '♠');
-        $values = array('A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'K', 'Q');
+        $values = array('A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K');
 
         foreach($suits as $suit) {
             foreach($values as $value) {
-                $this->cards[] = new Card($suit, $value);
+                $this->cards[] = new Card($suit, (string)$value);
             }
         }
     }
 
-    public function draw($number = 1)
+    public function draw(): ?Card
     {
         return array_pop($this->cards);
     }
 
-    public function shuffle()
+    /**
+     * @return Card[]
+     */
+    public function shuffle(): array
     {
         shuffle($this->cards);
         return $this->cards;
     }
 
-    public function getCardsSorted()
+    /**
+     * @return Card[]
+     */
+    public function getCardsSorted(): array
     {
         $cards = $this->cards;
         // usort(); sort an array by values using a user definied comparison function
-        usort($cards, function ($a, $b) {
+        usort($cards, function ($argumenta, $argumentb) {
             $suitOrder = ['♥', '♦', '♣', '♠'];
-            $suitComparison = array_search($a->getSuit(), $suitOrder) - array_search($b->getSuit(), $suitOrder);
+            $suitComparison = array_search($argumenta->getSuit(), $suitOrder) - array_search($argumentb->getSuit(), $suitOrder);
             if ($suitComparison === 0) {
                 $valueOrder = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
-                return array_search($a->getValue(), $valueOrder) - array_search($b->getValue(), $valueOrder);
+                return array_search($argumenta->getValue(), $valueOrder) - array_search($argumentb->getValue(), $valueOrder);
             }
             return $suitComparison;
         });

@@ -6,16 +6,23 @@ use App\Card\Card;
 
 class CardHand
 {
-    private $hand = [];
+    /**
+    * @var Card[]
+    */
+    private array $hand = [];
 
     public function add(Card $card): void
     {
         $this->hand[] = $card;
     }
 
+    /**
+     * @return Card[]
+     */
     public function getCards(): array
     {
-        return $this->hand;
+        $cards = $this->hand;
+        return $cards;
     }
 
     public function getNumberCards(): int
@@ -26,6 +33,9 @@ class CardHand
     // Returnerar en array av värden för alla kort i handen.
     // Funktionen loopar igenom varje kort i handen och hämtar värdet på varje kort och sparar det i en array.
     // Sedan returneras denna array med kortvärden.
+    /**
+     * @return string[]
+     */
     public function getValues(): array
     {
         $values = [];
@@ -39,8 +49,12 @@ class CardHand
     // Den initierar en tom array, itererar genom varje kort i handen och
     // lägger till dess strängrepresentation till arrayen.
     // Sedan returnerar funktionen arrayen med strängar.
+    /**
+     * @return string[]
+     */
     public function getString(): array
     {
+        /** @var string[] $values */
         $values = [];
         foreach ($this->hand as $card) {
             $values[] = $card->getAsString();
