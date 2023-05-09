@@ -10,7 +10,7 @@ class ReportControllerTwig extends AbstractController
 {
     // 2.1 Skapa en route / som ger en presentation av dig själv inklusive en bild.
     #[Route("/", name: "me")]
-    public function me(): Response
+    public function mePage(): Response
     {
         return $this->render('me.html.twig');
     }
