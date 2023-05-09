@@ -96,6 +96,46 @@
 
     <div id="kmom03">
         <p>Här är min redovisningstext för kmom03</p>
+
+        <p>
+            Att modellera ett kortspel med flödesdiagram bidrog till att jag innan jag började programmera kunde ha en klarare bild av hur jag skulle bygga upp koden.
+            Det hjälpte mig även att kunna se hela bilden, vilket var hjälpsamt.
+            Pseudokoden bidrog till att jag kunde ha en grund för de mindre delarna av flödesdiagrammet och med hjälp av det programmera koden.
+            Jag anser att det undderlättade för mig vid start av uppgiften, men jag borde ha gått tillbaka och kollat på de i stunder där jag fastnade.
+        </p>
+
+        <p>
+            Jag använde mig av dem klasserna jag skapat i tidigare uppgift: Card, DeckOfCards.
+            Sedan skapade jag en ny klass Score där jag beräknade poängen för spelaren/bankiren och även jämförde poängen mellan spelarna för att utse en vinnare.
+            
+            För detta kmom valde jag att skapa en ny controller som skulle innehålla alla routes för spelet, det vill säga för startsidan/landningssidan, dokumentationen,
+            init för att initiera spelet och sessionerna, spela, dra kort, bankiren drar kort och avsluta spelet.
+            Flödet var enligt följande: man klickar på en länk 'Starta spelet' som leder till routen init.
+            Där initieras sessionerna, alla spelarna får två kort som läggs till i deras lista/hand. Även kortlekens storlek beräknas.
+            Denna route renderar html.twig sidan play där själva spelplanen för spelaren och två knappar (draw/end) visas.
+            När spelaren klickar på draw knappen går den till routen draw och där dras ett kort som läggs till i spelaren hand och visas på sidan, även kortlekens storlek ändras.
+            Routen redirectar till routen play som bara renderar samma html.twig, samma sida.
+            När spelaren klickar på end knappen, skickas den till routen bankir_draw där bankiren drar kort så länge dess poäng är under 17, sessionerna uppdateras och den redirectar till routen end.
+            I routen end beräknas spelaren och bankirens totala poäng och jämförs med hjälp av metoder i klassen Score och en vinnare utses.
+            I min play.html.twig har jag med hjälp av en if-sats gjort så att när det finns en vinnare visas vinnaren och bankirens hand och totala poäng.
+        </p>
+
+        <p>
+            Jag fastnade väldigt länge på detta kmom och tyckte det var väldigt många steg som behövde göras, vilket kändes överväldigande.
+            Med tanke på det så är jag nöjd att jag lyckades ta mig igenom uppgiften och kraven.
+            Förbättringspotentialen jag ser just nu är att göra controllern ännu tunnare och bryta ut och placera i klasser.
+            Självklart vore det också snyggare om man kunde rita ut korten ordentligt med hjälp av bild istället för i formatet [A♦] som jag har gjort.
+        </p>
+
+        <p>
+            En så länge tycker jag att det fortfarande är lite svårt att koda i ramverket Symfony.
+            Man måste hålla koll på strukturen en hel del med templates, src, controller m.m.
+            När man har jobbat ett tag och kommit in i det bättre tror jag att det kan vara ett kraftigt verktyg att ha.
+        </p>
+
+        <p>
+            Min TIL för detta kmom är att jag lärde mig lite mer om hur flödesdiagram kan hjälpa och underlätta för en i ett tidigt skede i programmering.
+        </p>
     </div>
 
     <a href="{{ path('report') }}#kmom04">Kmom04</a>
