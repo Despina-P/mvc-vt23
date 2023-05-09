@@ -4,7 +4,10 @@ namespace App\Card;
 
 class DeckOfCardsJoker extends DeckOfCards
 {
-    private $jokers;
+    /**
+     * @var Card[]
+     */
+    private array $jokers;
 
     public function __construct()
     {
@@ -13,6 +16,9 @@ class DeckOfCardsJoker extends DeckOfCards
         $this->cards = array_merge($this->cards, $this->jokers);
     }
 
+    /**
+     * @return Card[]
+     */
     public function getJokers(): array
     {
         return $this->jokers;
