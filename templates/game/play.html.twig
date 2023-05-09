@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Playing{% endblock %}
+{% block body %}
+<h1>Twenty-One game [PLAYING]</h1>
+
+<p>Kortlekens storlek är {{ deckSize }}.</p>
+
+{% if winner is defined %}
+    <h2>Bankirens kort: </h2> <p>{{ cardsListBankir }}</p>
+    <p>Bankirens summa: {{ bankirScore }}</p>
+
+    <p> {{ winner }}</p>
+{% endif %}
+
+<h2>Spelarens kort: </h2> <p> {{ cardsListPlayer }} </p>
+
+<form method="post" action="">
+    <p>
+        <input type="submit" name="draw" value="Draw"
+            onClick="this.form.action='{{ path('draw') }}';"
+        >
+        <input type="submit" name="end" value="End"
+            onClick="this.form.action='{{ path('bankir_draw') }}';"
+        >
+    </p>
+</form>
+
+{% endblock %}

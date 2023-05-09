@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Tjugoett{% endblock %}
+
+{% block body %}
+<h1>Tjugoett (kortspel) - egen version</h1>
+
+<p>Tjugoett är ett kortspel, där spelets mål är att nå ett värde av 21 med två eller flera kort.
+    <br>
+    Hur går spelet till?
+    <br>
+    Ess räknas som 1, knektar som 11, damer som 12 och kungar som 13.
+    <br>
+    En spelare utses till bankir, dennes kort syns inte.
+    En spelare spelar mot bankiren, dennes kort syns.
+    Spelaren och bankiren får två kort var att börja med.
+    Spelaren kan välja att: 
+    1. dra ett kort och då dras även ett kort till bankiren.
+    2. stanna/avsluta och jämföra sina kort med bankirens.
+    Om summan av spelarens kort är 21 vinner spelaren.
+    Om summan är större än 21 förlorar spelaren.
+    <br>
+    <a href="https://sv.wikipedia.org/wiki/Tjugoett_(kortspel)">Information om spelet på wikipedia</a></p>
+
+<p><a href="{{ path('game_doc')}}">Documentation</a></p>
+
+<p><a href="{{ path('init') }}">Starta Spelet</a></p>
+
+
+
+{% endblock %}

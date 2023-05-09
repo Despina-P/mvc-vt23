@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Documentation{% endblock %}
+
+{% block body %}
+<h3>Flödesschema: </h3>
+<a href="{{ asset('img/flowchart.png') }}">
+    <img src="{{ asset('img/flowchart.png') }}" width="400px" alt="">
+</a>
+
+<h3>Pseudokod: </h3>
+<a href="{{ asset('img/pseudokod.png') }}">
+    <img src="{{ asset('img/pseudokod.png') }}" width="400px" alt="">
+</a>
+
+<h3>Klasser: </h3>
+<p>
+    DeckOfCards: representerar en kortlek;
+    <br>
+    Card: representerar ett kort;
+    <br>
+</p>
+
+
+{% endblock %}
