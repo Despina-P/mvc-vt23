@@ -2,8 +2,19 @@
 
 namespace App\Card;
 
+/**
+ * The class Score is used to calculate the score of each player
+ * and to pick a winner in the game twenty-one.
+ */
 class Score
 {
+    /**
+     * The method calculates the total score of a hand of cards, for each player,
+     * based on the cards in the list.
+     *
+     * @param string $cardsList A string representing a list of cards.
+     * @return int The total score of the hand.
+     */
     public function calculateHandValue(string $cardsList): int
     {
         preg_match_all('/\[(.*?)\]/', $cardsList, $matches);
@@ -30,6 +41,14 @@ class Score
         return $sum;
     }
 
+    /**
+     * The method compares the scores of the player and the bankir,
+     * and returns a message indicating who is the winner.
+     *
+     * @param int $playerScore The score of the player's hand.
+     * @param int $bankirScore The score of the bankir's hand.
+     * @return string The result message indicating the winner.
+     */
     public function compareHands(int $playerScore, int $bankirScore): string
     {
         $diff1 = abs($playerScore - 21);
