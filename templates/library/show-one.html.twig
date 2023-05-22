@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Show all books{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+        <h1>{{ book.title }} </h1>
+        <p>Author: {{ book.author }}</p>
+        <p>ISBN: {{ book.isbn }}</p>
+        {% if book.img is defined %}
+            <img src="{{ asset('img/' ~ book.img) }}" alt="Book Image">
+        {% else %}
+            <p>Bild saknas.</p>
+        {% endif %}
+    </div>
+{% endblock %}
