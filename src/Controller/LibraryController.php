@@ -73,32 +73,32 @@ class LibraryController extends AbstractController
         ]);
     }
 
-    #[Route('/library/show/{id}', name: 'book_by_id')]
+    #[Route('/library/show/{idnumber}', name: 'book_by_id')]
     public function showBookById(
         LibraryRepository $libraryRepository,
-        int $id
+        int $idnumber
     ): Response {
         $book = $libraryRepository
-            ->find($id);
+            ->find($idnumber);
 
         return $this->render('library/show-one.html.twig', [
             'book' => $book,
         ]);
     }
 
-    #[Route('/library/delete/{id}', name: 'book_delete_by_id', methods: ['POST'])]
+    #[Route('/library/delete/{idnumber}', name: 'book_delete_by_id', methods: ['POST'])]
     public function deleteBookById(
-        ManagerRegistry $doctrine,
+        //ManagerRegistry $doctrine,
         LibraryRepository $libraryRepository,
-        int $id
+        int $idnumber
     ): Response {
         //$entityManager = $doctrine->getManager();
         //$product = $entityManager->getRepository(Product::class)->find($id);
-        $book = $libraryRepository->find($id);
+        $book = $libraryRepository->find($idnumber);
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id '.$idnumber
             );
         }
 
@@ -114,10 +114,9 @@ class LibraryController extends AbstractController
         LibraryRepository $libraryRepository,
         Request $request
     ): Response {
-        $id = $request->query->get('id');
-        $isbn = $request->query->get('isbn');
+        $idnumber = $request->query->get('idnumber');
 
-        $book = $libraryRepository->find($id);
+        $book = $libraryRepository->find($idnumber);
 
         return $this->render('library/update-form.html.twig', [
             'book' => $book,
@@ -128,16 +127,16 @@ class LibraryController extends AbstractController
     public function updateBook(
         LibraryRepository $libraryRepository,
         Request $request,
-        int $id,
+        int $idnumber,
         int $isbn
     ): Response {
         // $entityManager = $doctrine->getManager();
         // $book = $entityManager->getRepository(Library::class)->find($id);
-        $book = $libraryRepository->find($id);
+        $book = $libraryRepository->find($idnumber);
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id '.$idnumber
             );
         }
 

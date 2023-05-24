@@ -13,13 +13,13 @@
         <p><a href="{{ path('book_by_id', {'id': book.id}) }}">{{ book.title }}</a></p>
 
         <form action="{{ path('book_update_form') }}" method="GET">
-            <input type="hidden" name="id" value="{{ book.id }}">
+            <input type="hidden" name="idnumber" value="{{ book.id }}">
             <input type="hidden" name="isbn" value="{{ book.isbn }}">
             <button type="submit">Update</button>
         </form>
 
         <form action="{{ path('book_delete_by_id', {'id': book.id}) }}" method="POST">
-            <input type="hidden" name="id" value="{{ book.id }}">
+            <input type="hidden" name="idnumber" value="{{ book.id }}">
             <input type="hidden" name="isbn" value="{{ book.isbn }}">
             <button type="submit">Delete</button>
         </form>

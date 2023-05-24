@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684759847">
-  <project timestamp="1684759847">
+<coverage generated="1684930135">
+  <project timestamp="1684930135">
     <file name="/home/despina/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="5" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="6" elements="12" coveredelements="10"/>
@@ -367,7 +367,7 @@
     </file>
     <file name="/home/despina/dbwebb-kurser/mvc/me/report/src/Controller/LibraryController.php">
       <class name="App\Controller\LibraryController" namespace="global">
-        <metrics complexity="20" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="0" elements="89" coveredelements="0"/>
+        <metrics complexity="20" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="0" elements="88" coveredelements="0"/>
       </class>
       <line num="16" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="19" type="stmt" count="0"/>
@@ -415,50 +415,49 @@
       <line num="109" type="stmt" count="0"/>
       <line num="112" type="method" name="updateBookForm" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="117" type="stmt" count="0"/>
-      <line num="118" type="stmt" count="0"/>
-      <line num="120" type="stmt" count="0"/>
+      <line num="119" type="stmt" count="0"/>
+      <line num="121" type="stmt" count="0"/>
       <line num="122" type="stmt" count="0"/>
       <line num="123" type="stmt" count="0"/>
-      <line num="124" type="stmt" count="0"/>
-      <line num="127" type="method" name="updateBook" visibility="public" complexity="6" crap="42" count="0"/>
-      <line num="136" type="stmt" count="0"/>
+      <line num="126" type="method" name="updateBook" visibility="public" complexity="6" crap="42" count="0"/>
+      <line num="135" type="stmt" count="0"/>
+      <line num="137" type="stmt" count="0"/>
       <line num="138" type="stmt" count="0"/>
       <line num="139" type="stmt" count="0"/>
       <line num="140" type="stmt" count="0"/>
-      <line num="141" type="stmt" count="0"/>
+      <line num="143" type="stmt" count="0"/>
       <line num="144" type="stmt" count="0"/>
       <line num="145" type="stmt" count="0"/>
-      <line num="146" type="stmt" count="0"/>
+      <line num="148" type="stmt" count="0"/>
       <line num="149" type="stmt" count="0"/>
       <line num="150" type="stmt" count="0"/>
-      <line num="151" type="stmt" count="0"/>
+      <line num="153" type="stmt" count="0"/>
       <line num="154" type="stmt" count="0"/>
       <line num="155" type="stmt" count="0"/>
-      <line num="156" type="stmt" count="0"/>
+      <line num="158" type="stmt" count="0"/>
       <line num="159" type="stmt" count="0"/>
       <line num="160" type="stmt" count="0"/>
-      <line num="161" type="stmt" count="0"/>
-      <line num="165" type="stmt" count="0"/>
+      <line num="164" type="stmt" count="0"/>
+      <line num="166" type="stmt" count="0"/>
       <line num="167" type="stmt" count="0"/>
       <line num="168" type="stmt" count="0"/>
-      <line num="169" type="stmt" count="0"/>
-      <line num="172" type="method" name="showAllBooksJSON" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="171" type="method" name="showAllBooksJSON" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="175" type="stmt" count="0"/>
       <line num="176" type="stmt" count="0"/>
-      <line num="177" type="stmt" count="0"/>
+      <line num="178" type="stmt" count="0"/>
       <line num="179" type="stmt" count="0"/>
       <line num="180" type="stmt" count="0"/>
       <line num="181" type="stmt" count="0"/>
       <line num="182" type="stmt" count="0"/>
-      <line num="183" type="stmt" count="0"/>
-      <line num="186" type="method" name="showBookByIdJSON" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="185" type="method" name="showBookByIdJSON" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="190" type="stmt" count="0"/>
       <line num="191" type="stmt" count="0"/>
-      <line num="192" type="stmt" count="0"/>
+      <line num="193" type="stmt" count="0"/>
       <line num="194" type="stmt" count="0"/>
       <line num="195" type="stmt" count="0"/>
       <line num="196" type="stmt" count="0"/>
       <line num="197" type="stmt" count="0"/>
-      <line num="198" type="stmt" count="0"/>
-      <metrics loc="201" ncloc="194" classes="1" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="0" elements="89" coveredelements="0"/>
+      <metrics loc="200" ncloc="193" classes="1" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="0" elements="88" coveredelements="0"/>
     </file>
     <file name="/home/despina/dbwebb-kurser/mvc/me/report/src/Controller/LuckyControllerTwig.php">
       <class name="App\Controller\LuckyControllerTwig" namespace="global">
@@ -643,6 +642,6 @@
       <line num="38" type="stmt" count="0"/>
       <metrics loc="67" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="18" loc="1483" ncloc="1280" classes="17" methods="80" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="454" coveredstatements="67" elements="534" coveredelements="83"/>
+    <metrics files="18" loc="1482" ncloc="1279" classes="17" methods="80" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="453" coveredstatements="67" elements="533" coveredelements="83"/>
   </project>
 </coverage>
