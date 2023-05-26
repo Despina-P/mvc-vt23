@@ -163,5 +163,36 @@
         Därmed anser jag att förbättringarna åstadkom det jag strävade mot.
     </p>
 
+    <p>
+        För Scrutinizer upplevdes inga större förbättringar på mätvärdena.
+        Den fick samma rating 9.96. De fem issues som hittades korrigerades, medan en minor introdducerades.
+    </p>
+
+    <h2>Diskussion</h2>
+
+    <p>
+        Både PHPMetrics och Scrutinizer är bra verktyg som analyserar och mäter kodkvaliteten samt tillämpar principerna i 'clean code'.
+        Därmed tycker jag definitivt att verktygen kan användas av utvecklare för att aktivt arbeta med förbättring av koden.
+    </p>
+
+    <p>
+        Fördelar med dessa verktyg är att man får objektiva mätvärden som kan hjälpa en som utvecklare att identifiera svaga punkter i koden och därmed även områden med förbättringspotential.
+        De kan även hjälpa till med buggar, att identifiera kodstycken och kodstrukturer som man kanske aldrig hade märkt och man sökte igenom koden själv.
+        Det bidrar till att potentiella fel och problem kan åtgärdas i ett tidigt skede.
+        Framförallt är dessa verktyg bra vad gäller varnade av de sex C:na vilket ger utvecklaren guidning för att uppdatera koden så att den är mer läsbar och lättare att underhålla.
+    </p>
+
+    <p>
+        En nackdel med dessa verktyg är att alla aspekter av en kodkvalitet inte kan mätas.
+        Det är även viktigt att komma ihåg att vissa varningar är baserade på allmänna principer i vårt fall i PHP och det kan krävas att man tänker över eller anpassar dessa varningar.
+        Ytterligare en nackdel är att, eftersom det är väldigt inriktat på att analysera de tekniska aspekterna, som visats av de sex C:na, kan de försumma andra delar av clean-code såsom regler som specifika verksamheter har.
+        Detta påverkar hur anpassningsbar koden är, eftersom data och händelser i olika verksamheter har olika behov och krav.
+    </p>
+
+    <p>
+        Andra sätt att jobba mot clean-code är till exempel att andra får granska ens kod, såsom kollegor och experter inom området.
+        Detta kan göra att man får värdefulla inputs och feedback på kodens kvalitet.
+        Sedan kan även refactoring på ett regelbundet sätt användas. Om detta sker regelbundet kan man gradvis förbättra kodkvaliteten.
+    </p>
 
 {% endblock %}
