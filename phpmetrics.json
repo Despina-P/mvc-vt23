@@ -13,7 +13,7 @@
             "binary": "git"
         },
         "junit": {
-            "file": "docs/metrics/junit.html"
+            "file": "docs/junit.xml"
         }
     }
 }

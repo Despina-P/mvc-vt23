@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="14" assertions="18" errors="0" warnings="0" failures="0" skipped="0" time="0.013053">
+    <testsuite name="Project Test Suite" tests="14" assertions="18" errors="0" warnings="0" failures="0" skipped="0" time="0.013053">
+      <testsuite name="App\Card\CardHandTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" tests="4" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.007599">
+        <testcase name="testAddCard" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="17" assertions="1" time="0.005835"/>
+        <testcase name="testGetNumberCards" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="30" assertions="1" time="0.000134"/>
+        <testcase name="testGetValuesHand" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="43" assertions="1" time="0.001481"/>
+        <testcase name="testGetString" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="56" assertions="1" time="0.000148"/>
+      </testsuite>
+      <testsuite name="App\Card\CardTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.000248">
+        <testcase name="testGetSuit" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="16" assertions="1" time="0.000087"/>
+        <testcase name="testGetValue" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="25" assertions="1" time="0.000080"/>
+        <testcase name="testGetAsString" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="34" assertions="1" time="0.000080"/>
+      </testsuite>
+      <testsuite name="App\Card\DeckOfCardsJokerTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsJokerTest.php" tests="2" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.002770">
+        <testcase name="testDeckOfCardsJokerContainsJokers" class="App\Card\DeckOfCardsJokerTest" classname="App.Card.DeckOfCardsJokerTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsJokerTest.php" line="17" assertions="3" time="0.002348"/>
+        <testcase name="testDrawFromEmptyDeckOfCardsJokerReturnsNull" class="App\Card\DeckOfCardsJokerTest" classname="App.Card.DeckOfCardsJokerTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsJokerTest.php" line="31" assertions="1" time="0.000422"/>
+      </testsuite>
+      <testsuite name="App\Card\DeckOfCardsTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.001884">
+        <testcase name="testShuffleReturnsShuffledDeck" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="17" assertions="1" time="0.001511"/>
+        <testcase name="testDrawFromEmptyDeckReturnsNull" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="27" assertions="1" time="0.000204"/>
+        <testcase name="testGetDeckSize" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="39" assertions="1" time="0.000169"/>
+      </testsuite>
+      <testsuite name="App\Card\ScoreTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/ScoreTest.php" tests="2" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.000551">
+        <testcase name="testCalculateHandValue" class="App\Card\ScoreTest" classname="App.Card.ScoreTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/ScoreTest.php" line="16" assertions="2" time="0.000423"/>
+        <testcase name="testCompareHands" class="App\Card\ScoreTest" classname="App.Card.ScoreTest" file="/home/despina/dbwebb-kurser/mvc/me/report/tests/Card/ScoreTest.php" line="30" assertions="2" time="0.000129"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
