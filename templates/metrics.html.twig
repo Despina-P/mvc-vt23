@@ -3,6 +3,79 @@
 {% block title %}METRIC ANALYS{% endblock %}
 
 {% block body %}
+    <h1>Metric analys</h1>
+    <h3>Kodkvalitet och hur man kan jobba med “Clean code”</h3>
+
+    <h2>Introduktion</h2>
+
+    <p>En förklaring till de sex C:na och hur de kan påverka kodens kvalitet.</p>
+
+    <p>Codestyle: 
+        Handlar om olika riktlinjer eller regler som används vid skrivande av kod.
+        Exempel på detta är indentation och namnkonvention, en teckenföljd för att identifiera bland annat variabler.
+        Syftet är att göra koden mer lättläst, lätt att underhålla och underlätta vid sammarbete mellan utvecklare.
+    </p>
+
+    <p>
+        Coverage:
+        Handlar om hur mycket av källkoden som testas av testfallen som skapats.
+        Om värdet är högt indikerar det att fler rader av kod testas under testningen och detta gör att sannolikheten att hitta buggar och förbättringspotential i koden ökar.
+    </p>
+
+    <p>
+        Complexity:
+        Handlar om komplexiteten av koden.
+        Ju högre komplexitet desto svårare är kodens läsbarhet, möjligheten att debugga och underhålla.
+        Därmed, genom att hålla koden enkel och 'rakt på sak' minskar sannolikheten att fel uppstår och underlättar även när andra ska jobba med din kod.
+        <br>
+        Exempel från min kod är i 'App\Controller\LibraryControlle' där bland annat Relative System Complexity har ett värde på 400.56 vilket indikerar att det har en hög genomsnittlig komplexitet.
+    </p>
+
+    <p>
+        Cohesion:
+        Handlar om mätning av hur sammanhängande komponenterna inuti en modul eller klass är.
+        Ett högt värde innebär därmed att koden inuti modulen/klasser har ett fokusområde.
+        Detta underlättar vid förståelse av koden, tester och underhållning.
+    </p>
+
+    <p>
+        Coupling:
+        Handlar om mätning av beroenden mellan olika moduler eller klasser.
+        Ett lågt värde innebär att modulerna/klasserna är självständiga och oberoende av varandra, vilket gör att förändring i en bit av koden inte påverkar andra delar.
+        Detta bidrar till en ökad flexibilitet, återanvändning av kod och lättare underhållning.
+        <br>
+        Exempel från min kod finns i 'App\Card\Card' där den har tre stycken klasser som den påverkar via Afferent Coupling och inga klasser som den påverkas av via Efferent Coupling.
+        Den har värde 0 på instabilitet vilket indikerar att klassen är mycket stabil och sannolikt inte behöver genomgå förändringar.
+    </p>
+
+    <p>
+        CRAP (Change Risk Anti-Patterns):
+        Handlar om ett sätt att beräkna komplexiteten och test täckningen av koden.
+        Den identifierar kod som har hög komplexitet och inte täcks tillräckligt av testerna och som därmed indikerar områden som är riskabla/fragila.
+        Dessutom hjälper den till med prioriteringen av Code Refactoring och tillägg av tester som kan öka kodkvaliteten.
+    </p>
+
+    <h2>Phpmetrics</h2>
+
+    <img src="{{ asset('img/phpmetrics1.png') }}" width="800px" alt="Image of Error PHPMetrics">
+    <p>
+        Svaga punkter i koden är bland annat ett error i 'App\Controller\LibraryController'.
+        Den betonar bland annat Complexity och att det inte finns Single Responsibility Principle, ett enkelt ansvar.
+        Ytterligare ett av de sex C:na den betonar är Cohesion, sammanhängandet i metoderna i klassen.
+        En åtgärd som eventuellt skulle kunna förbättra koden är att minska antalet metoder i klassen som är offentliga, till exempel genom att ändra från 'public' till 'private'.
+    </p>
+
+    <img src="{{ asset('img/phpmetrics2.png') }}" width="800px" alt="Image of Test Suit Coverage PHPMetrics">
+    <p>
+        Ytterligare en svag punkt i koden är att det finns tretton klasser som aldrig har testfall.
+        Det påverkar bland annat coverage och skulle kunna förbättras genom att utöka antalet tester och till exempel skapa minst ett testfall för övriga klasser.
+    </p>
+
+    <img src="{{ asset('img/phpmetrics3.png') }}" width="800px" alt="Image of Violations PHPMetrics">
+    <p>
+        Slutligen tänker jag att de två violations som klasserna 'App\Controller\GameControllerTwig' och 'App\Controller\LandingPageControllerTwig' har skulle kunna förbättras.
+        De berör Codestyle och Coverage då eventuellt flera testfall mot klasserna skulle bidra till fastställande att koden fungerar som den ska.
+    </p>
 
 
 {% endblock %}
