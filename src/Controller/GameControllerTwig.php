@@ -6,10 +6,7 @@ use App\Card\Card;
 use App\Card\DeckOfCardsJoker;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
-
 use App\Card\Score;
-use App\Card\Player;
-
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -124,7 +121,6 @@ class GameControllerTwig extends AbstractController
         $session->set('bankirScore', $bankirScore);
 
         //Beräkna storleken på kortleken och spara det i session
-        $deckSize = $session->get('deckSize');
         $deckSize = $deck->getDeckSize();
         $session->set('deckSize', $deckSize);
 
@@ -215,7 +211,6 @@ class GameControllerTwig extends AbstractController
         }
 
         //Beräkna storleken på kortleken och spara det i session
-        $deckSize = $session->get('deckSize');
         $deckSize = $deck->getDeckSize();
         $session->set('deckSize', $deckSize);
 
