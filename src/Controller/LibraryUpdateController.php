@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class LibraryUpdateController extends AbstractController
 {
-
     #[Route('/library/update-form', name: 'book_update_form', methods: ['GET'])]
     public function updateBookForm(
         LibraryRepository $libraryRepository,
@@ -47,17 +46,17 @@ class LibraryUpdateController extends AbstractController
         if (isset($title)) {
             $book->setTitle(strval($title));
         }
-        
+
         $author = $request->request->get('author');
         if (isset($author)) {
             $book->setAuthor(strval($author));
         }
-        
+
         $isbn = $request->request->get('isbn');
         if (isset($isbn)) {
             $book->setISBN(intval($isbn));
         }
-        
+
         $img = $request->request->get('img');
         if (isset($img)) {
             $book->setImg(strval($img));

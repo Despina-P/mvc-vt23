@@ -25,17 +25,17 @@ class LibraryCreateController extends AbstractController
         if (isset($title)) {
             $book->setTitle(strval($title));
         }
-        
+
         $author = $request->request->get('author');
         if (isset($author)) {
             $book->setAuthor(strval($author));
         }
-        
+
         $isbn = $request->request->get('isbn');
         if (isset($isbn)) {
             $book->setISBN(intval($isbn));
         }
-        
+
         $img = $request->request->get('img');
         if (isset($img)) {
             $book->setImg(strval($img));

@@ -301,6 +301,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ReportControllerTwig.html#method_report"
         },                {
+            "fqsen": "\\App\\Controller\\ReportControllerTwig\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-ReportControllerTwig.html#method_metrics"
+        },                {
             "fqsen": "\\App\\Kernel",
             "name": "Kernel",
             "summary": "",
@@ -316,16 +321,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-LibraryController.html#method_index"
         },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AcreateLibrary\u0028\u0029",
-            "name": "createLibrary",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_createLibrary"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AcreateFormLibrary\u0028\u0029",
-            "name": "createFormLibrary",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_createFormLibrary"
-        },                {
             "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AshowAllBooks\u0028\u0029",
             "name": "showAllBooks",
             "summary": "",
@@ -340,26 +335,6 @@ Search.appendIndex(
             "name": "deleteBookById",
             "summary": "",
             "url": "classes/App-Controller-LibraryController.html#method_deleteBookById"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AupdateBookForm\u0028\u0029",
-            "name": "updateBookForm",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_updateBookForm"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AupdateBook\u0028\u0029",
-            "name": "updateBook",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_updateBook"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AshowAllBooksJSON\u0028\u0029",
-            "name": "showAllBooksJSON",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_showAllBooksJSON"
-        },                {
-            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AshowBookByIdJSON\u0028\u0029",
-            "name": "showBookByIdJSON",
-            "summary": "",
-            "url": "classes/App-Controller-LibraryController.html#method_showBookByIdJSON"
         },                {
             "fqsen": "\\App\\Controller\\ProductController",
             "name": "ProductController",
@@ -560,6 +535,51 @@ Search.appendIndex(
             "name": "remove",
             "summary": "",
             "url": "classes/App-Repository-ProductRepository.html#method_remove"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryApiController",
+            "name": "LibraryApiController",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryApiController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryApiController\u003A\u003AshowAllBooksJSON\u0028\u0029",
+            "name": "showAllBooksJSON",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryApiController.html#method_showAllBooksJSON"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryApiController\u003A\u003AshowBookByIdJSON\u0028\u0029",
+            "name": "showBookByIdJSON",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryApiController.html#method_showBookByIdJSON"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryCreateController",
+            "name": "LibraryCreateController",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryCreateController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryCreateController\u003A\u003AcreateLibrary\u0028\u0029",
+            "name": "createLibrary",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryCreateController.html#method_createLibrary"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryCreateController\u003A\u003AcreateFormLibrary\u0028\u0029",
+            "name": "createFormLibrary",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryCreateController.html#method_createFormLibrary"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryUpdateController",
+            "name": "LibraryUpdateController",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryUpdateController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryUpdateController\u003A\u003AupdateBookForm\u0028\u0029",
+            "name": "updateBookForm",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryUpdateController.html#method_updateBookForm"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryUpdateController\u003A\u003AupdateBook\u0028\u0029",
+            "name": "updateBook",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryUpdateController.html#method_updateBook"
         },                {
             "fqsen": "\\",
             "name": "\\",
