@@ -136,9 +136,32 @@
 
     <p>
         En annan förbättring jag valde att jobba med var Error som PHPMetrics tog fram för LibraryController.
-        Där valde jag att ändra metoder som var publika till privata när de inte behövde vara tillgängliga utanför klassen.
-        Med detta hoppas jag att Error ska försvinna och att Cohesion ska öka.
-        Hoppas även att det bidrar till att Complexity blir lägre. 
+        Där valde jag att dela upp min controller i flera mindre controller som hade mer specifika uppgifter.
+        Jag började med att skapa LibraryApiController som innehöll de två routes som med hjälp av JSON visade alla böckerna och en bok i form av en JSON.
+        Därefter skapade jag controllern LibraryCreateController och däri la jag alla routes som berörde skapandet av en bok såsom routen som renderade formuläret.
+        Slutligen skapade jag en controller LibraryUpdateController där jag la alla routes som berörde uppdateringen av en bok.
+        Övriga routes behöll jag i LibraryController.
+        Med detta hoppas jag att Error ska försvinna och eventuellt även Violations. I Violations talades det om att det bland annat skulle vara bra att skapa enhetstester, men eftersom det inte är något vi har jobbat med i denna kursen valde jag inte att göra några sådanan.
+        Min förhoppning var också att Cohesion skulle vara högre så att det blev mer tydligt att en klass/controller har en specifik arbetsupgift och ett fokus.
+        Detta tror jag att jag lyckades med. Slutligen hoppas jag att det bidrar till att Complexity blir lägre och därmed med läsbar kod.
     </p>
+
+    <p>
+        Förbättringarna jag gjorde bidrog till:
+    </p>
+
+    <img src="{{ asset('img/phpmetricsbefore.png') }}" width="800px" alt="Image of PHPMetrics before">
+    <img src="{{ asset('img/phpmetricsafter.png') }}" width="800px" alt="Image of PHPMetrics after">
+
+    <p>
+        1. Error försvann samt violation sjönk från sex stycken till fyra stycken.
+        <br>
+        2. Average cyclomatic complexity by Class sänktes från 3.61 till 3.24.
+        <br>
+        3. Average bugs by class sänktes från 0.13 till 0.10
+        <br>
+        Därmed anser jag att förbättringarna åstadkom det jag strävade mot.
+    </p>
+
 
 {% endblock %}
