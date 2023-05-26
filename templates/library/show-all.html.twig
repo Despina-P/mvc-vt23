@@ -10,7 +10,7 @@
 
 <div class="example-wrapper">
     {% for book in books %}
-        <p><a href="{{ path('book_by_id', {'id': book.id}) }}">{{ book.title }}</a></p>
+        <p><a href="{{ path('book_by_id', {'idnumber': book.id}) }}">{{ book.title }}</a></p>
 
         <form action="{{ path('book_update_form') }}" method="GET">
             <input type="hidden" name="idnumber" value="{{ book.id }}">
@@ -18,7 +18,7 @@
             <button type="submit">Update</button>
         </form>
 
-        <form action="{{ path('book_delete_by_id', {'id': book.id}) }}" method="POST">
+        <form action="{{ path('book_delete_by_id', {'idnumber': book.id}) }}" method="POST">
             <input type="hidden" name="idnumber" value="{{ book.id }}">
             <input type="hidden" name="isbn" value="{{ book.isbn }}">
             <button type="submit">Delete</button>
