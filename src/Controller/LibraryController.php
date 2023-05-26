@@ -56,13 +56,13 @@ class LibraryController extends AbstractController
     }
 
     #[Route('library/create-form', name:'library_create_form', methods: ['GET'])]
-    public function createFormLibrary(): Response
+    private function createFormLibrary(): Response
     {
         return $this->render('library/create-form.html.twig');
     }
 
     #[Route('/library/show', name: 'library_show_all')]
-    public function showAllBooks(
+    private function showAllBooks(
         LibraryRepository $libraryRepository
     ): Response {
         $books = $libraryRepository
@@ -74,7 +74,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/show/{idnumber}', name: 'book_by_id')]
-    public function showBookById(
+    private function showBookById(
         LibraryRepository $libraryRepository,
         int $idnumber
     ): Response {
@@ -105,7 +105,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/update-form', name: 'book_update_form', methods: ['GET'])]
-    public function updateBookForm(
+    private function updateBookForm(
         LibraryRepository $libraryRepository,
         Request $request
     ): Response {
@@ -122,8 +122,7 @@ class LibraryController extends AbstractController
     public function updateBook(
         LibraryRepository $libraryRepository,
         Request $request,
-        int $idnumber,
-        int $isbn
+        int $idnumber
     ): Response {
         $book = $libraryRepository->find($idnumber);
 
@@ -161,7 +160,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/api/library/books', name: 'api_show_all')]
-    public function showAllBooksJSON(
+    private function showAllBooksJSON(
         LibraryRepository $libraryRepository
     ): Response {
         $books = $libraryRepository
@@ -175,7 +174,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/api/library/book/{isbn<\d+>}', name: 'api_show_one')]
-    public function showBookByIdJSON(
+    private function showBookByIdJSON(
         LibraryRepository $libraryRepository,
         int $isbn
     ): Response {
