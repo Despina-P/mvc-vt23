@@ -56,13 +56,13 @@ class LibraryController extends AbstractController
     }
 
     #[Route('library/create-form', name:'library_create_form', methods: ['GET'])]
-    private function createFormLibrary(): Response
+    public function createFormLibrary(): Response
     {
         return $this->render('library/create-form.html.twig');
     }
 
     #[Route('/library/show', name: 'library_show_all')]
-    private function showAllBooks(
+    public function showAllBooks(
         LibraryRepository $libraryRepository
     ): Response {
         $books = $libraryRepository
@@ -74,7 +74,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/show/{idnumber}', name: 'book_by_id')]
-    private function showBookById(
+    public function showBookById(
         LibraryRepository $libraryRepository,
         int $idnumber
     ): Response {
@@ -105,7 +105,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/update-form', name: 'book_update_form', methods: ['GET'])]
-    private function updateBookForm(
+    public function updateBookForm(
         LibraryRepository $libraryRepository,
         Request $request
     ): Response {
@@ -160,7 +160,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/api/library/books', name: 'api_show_all')]
-    private function showAllBooksJSON(
+    public function showAllBooksJSON(
         LibraryRepository $libraryRepository
     ): Response {
         $books = $libraryRepository
@@ -174,7 +174,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/api/library/book/{isbn<\d+>}', name: 'api_show_one')]
-    private function showBookByIdJSON(
+    public function showBookByIdJSON(
         LibraryRepository $libraryRepository,
         int $isbn
     ): Response {
