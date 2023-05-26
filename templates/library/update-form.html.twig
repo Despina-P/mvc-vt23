@@ -10,7 +10,7 @@
 
 <div class="example-wrapper">
     <h1>Update Book</h1>
-    <form action="{{ path('book_update', {'id': book.id, 'isbn': book.isbn}) }}" method="post">
+    <form action="{{ path('book_update', {'idnumber': book.id, 'isbn': book.isbn}) }}" method="post">
         <input type="hidden" name="idnumber" value="{{ book.id }}">
         <input type="hidden" name="isbn" value="{{ book.isbn }}">
 
