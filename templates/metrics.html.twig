@@ -77,5 +77,67 @@
         De berör Codestyle och Coverage då eventuellt flera testfall mot klasserna skulle bidra till fastställande att koden fungerar som den ska.
     </p>
 
+    <h2>Scrutinizer</h2>
+
+    <img src="{{ asset('img/scruti1.png') }}" width="800px" alt="Image of issue Unused Code">
+    <p>
+        Ett problem som Scrutinizer lyfte vad att jag hade 'Unused code' på några platser i koden.
+        Vid närmare titt på koden, märkte jag att den faktiskt var onödig och det skulle kunna förbättras genom att helt ta bort dessa delar.
+        Detta berör både Codestyle och Cohesion. Koden blir vid borttaggande mer korrekt och läsbar.
+    </p>
+
+    <img src="{{ asset('img/scruti2.png') }}" width="800px" alt="Image of issue bug">
+    <p>
+        Ytterligare ett problem som Scrutinizer lyfte vad att jag hade en bugg i src/Controller/GameControllerTwig.php.
+        Jag hade lagt till ett use till en klass som jag tidigare skapat, men sedan valde att ta bort.
+        Detta berörde bland annat Codestyle och Cohesion. Även här är koden mer korrekt och läsbar vid korrigering.
+    </p>
+
+    <img src="{{ asset('img/scruti3.png') }}" width="800px" alt="Image of badges coverage">
+    <p>
+        Sist tänkte jag nämna badges coverage, som påverkar coverage, och dess relativt låga värde på 16%.
+        Testfallen som gjort har enbart gjort för klasserna i mappen Card, det vill säga:
+        Card.php, CardHand.php, DeckOfCards.php, DeckOfCardsJoker.php, Score.php.
+        Ett utökande av testfall till controllers (eventuellt i framtida kurser?) skulle kunna förbättra coverage.
+    </p>
+
+    <p>Scrutinizer badges för build, coverage och quality:</p>
+    <a href="https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/?branch=main">
+        <img src="https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/badges/quality-score.png?b=main">
+    </a>
+
+    <a href="https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/?branch=main">
+        <img src="https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/badges/coverage.png?b=main">
+    </a>
+
+    <a href="https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/?branch=main">
+        <img src="https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/badges/build.png?b=main">
+    </a>
+
+    <a href="https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/?branch=main">
+        <img src="https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/badges/code-intelligence.svg?b=main">
+    </a>
+
+    <h2>Förbättringar</h2>
+
+    <p>
+        Jag valde att jobba med förbättringarna som berörde den oanvända koden i 'src/Controller/GameControllerTwig.php' och 'src/Controller/LibraryController.php'.
+        Det jag valde att göra var att ta bort de delar av koden som Scrutinizer lyfta fram.
+        Anledningen till att jag valde just denna som första åtgärd var för att det dels påverkar Codestyle, men även Cohesion då det var en del av koden som egentligen inte fyllde något syfte i de specifika metoderna.
+        Med denna förändring hoppas jag att få ett högre värde på Cohesion.
+    </p>
+
+    <p>
+        Ytterligare en förbättring jag valde att jobba med var buggen i 'src/Controller/GameControllerTwig.php.' där ett oanvänt use fanns med.
+        Även här valde jag att göra det för att ta bort onödig kod som påverkar Codestyle och Cohesion negativt.
+        I samband med förbättringen ovan hoppas jag att det kommer att leda till ett högre värde av Cohesion.
+    </p>
+
+    <p>
+        En annan förbättring jag valde att jobba med var Error som PHPMetrics tog fram för LibraryController.
+        Där valde jag att ändra metoder som var publika till privata när de inte behövde vara tillgängliga utanför klassen.
+        Med detta hoppas jag att Error ska försvinna och att Cohesion ska öka.
+        Hoppas även att det bidrar till att Complexity blir lägre. 
+    </p>
 
 {% endblock %}
