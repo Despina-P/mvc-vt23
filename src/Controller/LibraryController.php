@@ -88,12 +88,9 @@ class LibraryController extends AbstractController
 
     #[Route('/library/delete/{idnumber}', name: 'book_delete_by_id', methods: ['POST'])]
     public function deleteBookById(
-        //ManagerRegistry $doctrine,
         LibraryRepository $libraryRepository,
         int $idnumber
     ): Response {
-        //$entityManager = $doctrine->getManager();
-        //$product = $entityManager->getRepository(Product::class)->find($id);
         $book = $libraryRepository->find($idnumber);
 
         if (!$book) {
@@ -102,8 +99,6 @@ class LibraryController extends AbstractController
             );
         }
 
-        //$entityManager->remove($product);
-        //$entityManager->flush();
         $libraryRepository->remove($book, true);
 
         return $this->redirectToRoute('library_show_all');
@@ -130,8 +125,6 @@ class LibraryController extends AbstractController
         int $idnumber,
         int $isbn
     ): Response {
-        // $entityManager = $doctrine->getManager();
-        // $book = $entityManager->getRepository(Library::class)->find($id);
         $book = $libraryRepository->find($idnumber);
 
         if (!$book) {
@@ -160,7 +153,6 @@ class LibraryController extends AbstractController
             $book->setImg(strval($img));
         }
 
-        //$entityManager->flush();
         $libraryRepository->save($book, true);
 
         return $this->redirectToRoute('library_show_all', [
