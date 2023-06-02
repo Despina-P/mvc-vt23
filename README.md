@@ -26,10 +26,10 @@ npm run build
 
 composer require symfony/orm-pack
 composer require --dev symfony/maker-bundle
-
 ```
 
 To run the code use:
+
 ```
 php -S localhost:8888 -t public
 ```
