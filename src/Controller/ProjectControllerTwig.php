@@ -25,11 +25,6 @@ class ProjectControllerTwig extends AbstractController
         return $this->render('project/home.html.twig');
     }
 
-    #[Route("/proj/doc", name: "project_doc")]
-    public function projectDoc(): Response
-    {
-        return $this->render('project/doc.html.twig');
-    }
 
     #[Route("/proj/about", name: "project_about")]
     public function projectAbout(): Response
@@ -103,7 +98,7 @@ class ProjectControllerTwig extends AbstractController
             'currentHand' => $currentHand,
             'startNumberOfHands' => $startNumberOfHands
         ];
-    
+
         // Loopa igenom $hands-arrayen för att sätta variablerna i $data
         foreach ($hands as $key => $value) {
             $data[$key] = $value;
