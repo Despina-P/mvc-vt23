@@ -112,7 +112,7 @@ class ProjectControllerTwig extends AbstractController
         // Spara $data i sessionen med nyckeln 'data'
         $session->set('data', $data);
 
-        var_dump($data);
+        //var_dump($data);
 
         return $this->render('project/play.html.twig', [
             'data' => $data,
@@ -123,11 +123,10 @@ class ProjectControllerTwig extends AbstractController
     #[Route("/proj/play/draw/{hand}", name: "project_draw", methods: ['POST', 'GET'])]
     public function projectDraw(
         SessionInterface $session,
-        Request $request,
         string $hand
     ): Response {
         $data = $session->get('data');
-        var_dump($data);
+        //var_dump($data);
         $deck = $session->get('deck');
         $handKey = $hand;
         //var_dump($handKey);
@@ -150,13 +149,6 @@ class ProjectControllerTwig extends AbstractController
                 //var_dump($handCards);
             }
 
-            if (is_string($handCards)) {
-                echo "Variabeln är en sträng.";
-            } else {
-                echo "Variabeln är inte en sträng.";
-            }
-
-
             // Uppdatera poängen för den aktuella spelaren
             $score = new Score();
             $scoreKey = "scoreHand{$currentHand}";
@@ -164,7 +156,7 @@ class ProjectControllerTwig extends AbstractController
             $session->set($scoreKey, $scoreHand);
             $session->set($handKey, $handCards);
 
-            var_dump($currentHand);
+            //var_dump($currentHand);
             // Byt till nästa hand
             if ($currentHand < $numberOfHands) {
                 // Återställ currentHand till 1 om det redan är lika med eller större än numberOfHands
@@ -174,7 +166,7 @@ class ProjectControllerTwig extends AbstractController
                 $currentHand = 1;
             }
             $session->set('currentHand', $currentHand);
-            var_dump($currentHand);
+            //var_dump($currentHand);
         }
 
         //Beräkna storleken på kortleken och spara det i session
@@ -203,7 +195,7 @@ class ProjectControllerTwig extends AbstractController
 
         // Spara $data i sessionen med nyckeln 'data'
         $session->set('data', $data);
-        var_dump($data);
+        //var_dump($data);
 
         return $this->render('project/play.html.twig', [
             'hand' => $hand,
@@ -238,7 +230,7 @@ class ProjectControllerTwig extends AbstractController
         $numberOfHands--;
         $session->set('numberOfHands', $numberOfHands);
         $currentHand = $session->get('currentHand');
-        var_dump($currentHand);
+        //var_dump($currentHand);
 
         // Byt till nästa hand
         if ($currentHand < $numberOfHands) {
@@ -249,7 +241,7 @@ class ProjectControllerTwig extends AbstractController
             $currentHand = 1;
         }
         $session->set('currentHand', $currentHand);
-        var_dump($currentHand);
+        //var_dump($currentHand);
         $data = [
             'deckSize' => $deckSize,
             'numberOfHands' => $numberOfHands,
@@ -272,8 +264,8 @@ class ProjectControllerTwig extends AbstractController
 
         // Spara $data i sessionen med nyckeln 'data'
         $session->set('data', $data);
-        var_dump($data);
-        var_dump($handKey);
+        //var_dump($data);
+        //var_dump($handKey);
         if (in_array(false, $data, true)) {
             // Det finns en spelare som inte har avslutat
             return $this->render('project/play.html.twig', [
@@ -291,7 +283,6 @@ class ProjectControllerTwig extends AbstractController
     public function projectFinished(
         SessionInterface $session
     ): Response {
-
         $score = new Score();
 
         // Hämta kortleken och bankirens kortlista från sessionen
@@ -319,7 +310,7 @@ class ProjectControllerTwig extends AbstractController
 
         // Hämta antalet händer från sessionen
         $startNumberOfHands = $session->get('startNumberOfHands');
-        var_dump($startNumberOfHands);
+        //var_dump($startNumberOfHands);
         // Skapa en array för att lagra spelarnas poäng
         $playerScores = [];
 
@@ -330,11 +321,11 @@ class ProjectControllerTwig extends AbstractController
             $playerScores[] = $playerScore;
         }
 
-        var_dump($playerScores);
+        //var_dump($playerScores);
 
         // Anropa projectCompareHands med spelarnas poäng och bankirens poäng
         $winner = $score->projectCompareHands($playerScores, $scoreBankir);
-        var_dump($winner);
+        //var_dump($winner);
 
         return $this->render('project/finished.html.twig', [
             'winner' => $winner
