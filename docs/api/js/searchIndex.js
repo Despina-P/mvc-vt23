@@ -96,6 +96,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Card-DeckOfCards.html#method_draw"
         },                {
+            "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AdrawTwoCards\u0028\u0029",
+            "name": "drawTwoCards",
+            "summary": "",
+            "url": "classes/App-Card-DeckOfCards.html#method_drawTwoCards"
+        },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003Ashuffle\u0028\u0029",
             "name": "shuffle",
             "summary": "",
@@ -155,6 +160,11 @@ Search.appendIndex(
             "name": "compareHands",
             "summary": "The\u0020method\u0020compares\u0020the\u0020scores\u0020of\u0020the\u0020player\u0020and\u0020the\u0020bankir,\nand\u0020returns\u0020a\u0020message\u0020indicating\u0020who\u0020is\u0020the\u0020winner.",
             "url": "classes/App-Card-Score.html#method_compareHands"
+        },                {
+            "fqsen": "\\App\\Card\\Score\u003A\u003AprojectCompareHands\u0028\u0029",
+            "name": "projectCompareHands",
+            "summary": "The\u0020method\u0020compares\u0020the\u0020scores\u0020of\u0020the\u0020player\u0020and\u0020the\u0020bankir,\nand\u0020returns\u0020a\u0020message\u0020indicating\u0020who\u0020is\u0020the\u0020winner.",
+            "url": "classes/App-Card-Score.html#method_projectCompareHands"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController",
             "name": "CardGameController",
@@ -580,6 +590,41 @@ Search.appendIndex(
             "name": "updateBook",
             "summary": "",
             "url": "classes/App-Controller-LibraryUpdateController.html#method_updateBook"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerTwig",
+            "name": "ProjectControllerTwig",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerTwig.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerTwig\u003A\u003AprojectStart\u0028\u0029",
+            "name": "projectStart",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerTwig.html#method_projectStart"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerTwig\u003A\u003AprojectAbout\u0028\u0029",
+            "name": "projectAbout",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerTwig.html#method_projectAbout"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerTwig\u003A\u003AprojectInit\u0028\u0029",
+            "name": "projectInit",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerTwig.html#method_projectInit"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerTwig\u003A\u003AprojectDraw\u0028\u0029",
+            "name": "projectDraw",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerTwig.html#method_projectDraw"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerTwig\u003A\u003AprojectEnd\u0028\u0029",
+            "name": "projectEnd",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerTwig.html#method_projectEnd"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerTwig\u003A\u003AprojectFinished\u0028\u0029",
+            "name": "projectFinished",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerTwig.html#method_projectFinished"
         },                {
             "fqsen": "\\",
             "name": "\\",
