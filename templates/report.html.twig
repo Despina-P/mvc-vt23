@@ -244,4 +244,57 @@
             Jag lärde mig värdet av clean-code med hjälp av de sex C:na och hur det kan påverka kodkvalitet.
         </p>
     </div>
+
+    <a href="{{ path('report') }}#kmom10">Kmom10</a>
+
+    <div id="kmom10">
+        <p>Här är min redovisningstext för kmom10</p>
+
+        <p>
+            Krav 1-3: Innehåll och utseende
+            <br>
+            Jag började med att skapa en kontroller ProjectControllerTwig där jag skapade en klass med samma namn och inuti den placerade jag sedan alla routes.
+            Sedan i templates/ skapade jag mappen project och inuti den placerade jag about/finished/home/play.html.twig.
+            Jag la sedan till en landingssida genom att skapa en route i min kontroller som renderade home.html.twig.
+            På den sidan visade jag en länk som ledde till about.html.twig sidan där jag skrev lite kort om projektet.
+            Sedan hade jag även ett formulär där man kunde skriva in namn och antal händer.
+            Under detta fanns en knapp som ledde till att spelet startades.
+            Hela spelet fanns på play.html.twig som byggdes om dynamiskt beroende på vad spelaren klickade på.
+            För att åstadkomma de olika funktionaliteterna skapade jag routen project_init som initierade kortleken, gav alla spelarna och bankiren två kort, beräkna varderas poäng och la ended_handX variabeln till false.
+            Hämtade även antalet händer och namnet personen skrev in i formuläret.
+            Beroende på om spelaren valde att klicka på Draw eller End knappen kom den in i olika routes som gjorde olika saker.
+            Draw knappen ledde till routen project_draw. Där fick spelaren dra ett kort som las till i dess hand om det fanns kort kvar i högen.
+            Jag kontrollerade även att ended_handX variabeln var false, alltså att spelaren inte avslutat spelet.
+            Poängen beräknades och sedan uppdaterades sessionerna.
+            End knappen ledde till routen project_end. Där beräknades spelarens poäng och sparades undan i session och även dess hand togs bort så att den inte längre hade möjlighet att fortsätta spela.
+            Här skapade jag även en kontroller som kollade om det fanns en value som var false innebar det att det fanns spelare kvar som ville spela. Då renderade jag project/play.html.twig igen, annars redirecta jag till routen project_finished.
+            I den routen drog bankiren dess kort, dennes poäng beräknades och med hjälp av projectCompareHands() i Score.php utsågs en vinnare.
+            Routen renderade sedan finish.html.twig som skrev ut vem vinnaren var.
+            <br>
+            Valde sedan att göra om min style som jag redan hade och gjorde den lite mer färgglad med en uppdaterad header och footer.
+            <br><br>
+            Krav 1-3: Repo och dokumentation
+            <br>
+            Jag uppdaterade min README.md med information och nya Scrutinizer badges.
+            Sedan körde jag om samtliga kommandon: composer csfix, composer lint, composer phpunit, composer phpdoc, composer phpmetrics.
+        </p>
+
+        <p>
+            Jag tyckte att detta var ett av de svåra slutprojekten.
+            Jag hade mycket problem med att få sessionerna att fungera.
+            Det verkade inte som att jag sparade undan värdena på ett korrekt sätt, vilket bidrog till exempel till att det aldrig gick över till nästa spelares tur och att spelaren som dragit ett kort inte fick det tillagt i sin hand.
+            Detta var alltså ett projekt som tog lång tid.
+            Trots att vi fick det förenklat, eftersom vi jobbade på ett kmom i två veckor, tyckte jag att det var svårt.
+        </p>
+
+        <p>
+            Kursen var helt okej. Återigen befäste jag kunskaper jag introducerats till i tidigare kurser.
+            Förstod ännu en gång databaser och enhetstester bättre.
+            De föreläsningarna som var förinspelade, valde jag, på grund av tidsbrist, att inte kolla på och följde därför bara med på föreläsningarna samt läste materialet/artiklarna till varje kmom.
+            Eventuellt att föreläsningarna skulle kunna finnas till som extramaterial då jag kände att föreläsningarna täckte det mesta.
+            Jag är nöjd med kursen, men är osäker på om jag skulle rekommendera den vidare då den har väldigt hög arbetsbelastning.
+            Slutligen ger jag den en sexa.
+        </p>
+
+    </div>
 {% endblock %}
