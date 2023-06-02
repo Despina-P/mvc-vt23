@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+
+<h1>Om sida: projekt och examination mvc</h1>
+
+<p>
+    Projektet jag valde att utveckla var en egen variant av ett kortspel likt tjugo-ett, 
+    men utan satsningar i "pengar" och därmed även sparande i "bankkonton". Utöver det är spelet likadant.
+    En anledning till att jag valde att ta bort denna biten är att 
+    tanken bakom spel vars syfte är att vinna pengar på andras bekostnad, uppmanar till girighet.
+    Ytterligare en anledning är problemet med spelberoende.
+    <br>
+    Jag började med att låta användaren påbörja spelet genom att skriva in sitt 'spelnamn'
+    och antalet händer, 1 till 3, som spelaren vill spela mot "bankiren".
+    Sedan startar spelet där varje hand har chansen att antingen dra ett kort eller avlsuta spelet.
+    När samtliga spelare dragit sina kort, drar bankiren sina kort och slutligen utses en vinnare.
+</p>
+
+{% endblock %}

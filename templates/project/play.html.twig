@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Playing{% endblock %}
+{% block body %}
+<h1>Twenty-One game [PLAYING]</h1>
+
+<p>Kortlekens storlek är {{ data.deckSize }}.</p>
+
+{% if data.currentHand %}
+    <p>Just nu spelare Hand{{ data.currentHand }}.</p>
+{% endif %}
+
+{% if winner is defined %}
+    <h2>Bankirens kort: </h2> <p>{{ data.cardsBankir }}</p>
+    <p>Bankirens summa: {{ data.scoreBankir }}</p>
+
+    <p> {{ data.winner }}</p>
+{% endif %}
+
+{% for i in 1..data.numberOfHands %}
+        <p>Hand{{ i }} kort: {{ attribute(data, 'hand' ~ i) }}</p>
+        <form method="post" action="{{ path('project_end', {'hand': 'hand' ~ data.currentHand}) }}">
+            <input type="hidden" name="hand" value="hand{{ data.currentHand }}">
+            <input type="submit" name="project_end" value="End">
+        </form>
+        <form method="post" action="{{ path('project_draw', {'hand': 'hand' ~ data.currentHand}) }}">
+            <input type="hidden" name="hand" value="hand{{ data.currentHand }}">
+            <input type="submit" name="project_draw" value="Draw">
+        </form>
+{% endfor %}
+
+{% endblock %}
