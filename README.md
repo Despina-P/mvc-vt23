@@ -78,6 +78,7 @@ chmod 755 tools/phpdoc/phpdoc
 ```
 
 <p>
+
 [![Code Coverage](https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/badges/quality-score.png?b=main)
 
 [![Build Status](https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/badges/build.png?b=main)](https://scrutinizer-ci.com/g/Despina-P/mvc-vt23/badges/coverage.png?b=main)
