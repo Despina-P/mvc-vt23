@@ -37,4 +37,5 @@ class ScoreTest extends TestCase
         // Testa att spelaren vinner
         $this->assertEquals("Spelaren vinner med totalt värde 18", $score->compareHands(18, 16));
     }
+
 }
