@@ -16,14 +16,11 @@ https://github.com/Despina-P/mvc-vt23.git
 cd mvc-vt23
 ```
 
-<h1>How ton install dependencies needed</h1>
+<h1>How to install dependencies needed</h1>
 ```
 composer install
-
 npm install
-
 npm run build
-
 composer require symfony/orm-pack
 composer require --dev symfony/maker-bundle
 ```
