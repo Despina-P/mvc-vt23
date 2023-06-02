@@ -135,7 +135,6 @@ class ProjectControllerTwig extends AbstractController
         $currentHand = $session->get('currentHand');
         $numberOfHands = $session->get('numberOfHands');
 
-        var_dump($data["ended_{$handKey}"]);
         // Dra ett nytt kort om spelaren inte har klickat på "End"
         if (in_array(false, $data, true)) {
             //Dra ett nytt kort
@@ -150,6 +149,13 @@ class ProjectControllerTwig extends AbstractController
                 //var_dump($handKey);
                 //var_dump($handCards);
             }
+
+            if (is_string($handCards)) {
+                echo "Variabeln är en sträng.";
+            } else {
+                echo "Variabeln är inte en sträng.";
+            }
+
 
             // Uppdatera poängen för den aktuella spelaren
             $score = new Score();
