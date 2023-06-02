@@ -32,7 +32,7 @@ class GameControllerTwig extends AbstractController
     }
 
 
-    #[Route("/game/init", name: "init")]
+    #[Route("/game/init", name: "init", methods: ['POST'])]
     public function init(
         SessionInterface $session
     ): Response {
