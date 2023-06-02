@@ -30,6 +30,20 @@ class DeckOfCards
         return array_pop($this->cards);
     }
 
+    public function drawTwoCards(): string
+    {
+        $listOfCards = '';
+        //Dra två stycken kort
+        for ($i = 0; $i < 2; $i++) {
+            $card = $this->draw();
+            //Skriv ut korten och lägg till i strängen
+            if ($card !== null) {
+                $listOfCards .= $card->getCard();
+            }
+        }
+        return $listOfCards;
+    }
+
     /**
      * @return Card[]
      */
