@@ -12,10 +12,10 @@ class Score
      * The method calculates the total score of a hand of cards, for each player,
      * based on the cards in the list.
      *
-     * @param string $cardsList A string representing a list of cards.
+     * @param mixed $cardsList A string representing a list of cards.
      * @return int The total score of the hand.
      */
-    public function calculateHandValue(string $cardsList): int
+    public function calculateHandValue(mixed $cardsList): int
     {
         preg_match_all('/\[(.*?)\]/', $cardsList, $matches);
     $values = $matches[1];
@@ -34,13 +34,11 @@ class Score
             $sum += 1;
         } elseif ($cardValue == '10') {
             $sum += 10;
-        } else {
-            $sum += (int)$cardValue;
         }
+        $sum += (int) $cardValue;
     }
-
     return $sum;
-}
+    }
 
     /**
      * The method compares the scores of the player and the bankir,
@@ -86,8 +84,9 @@ class Score
         $winningHandIndex = 1;
         $highestScore = $playerScores[0];
         $isDraw = false;
+        $amountOfHands = count($playerScores);
 
-        for ($i = 1; $i < count($playerScores); $i++) {
+        for ($i = 1; $i < $amountOfHands; $i++) {
             $playerScore = $playerScores[$i];
 
             if ($playerScore > $highestScore && $playerScore <= 21) {
